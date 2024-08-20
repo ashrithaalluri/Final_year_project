@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+{% include "adminhome/metatag.html" %}
+{% include "adminhome/header.html" %}
+{% include "adminhome/sidebar.html" %}
+<body>
+				               <!-- Pre Page Content -->
+            <div id="pre-page-content">
+                <h1><i class="glyphicon-nameplate_alt themed-color"></i> General Forms<br><small>All the elements you need!</small></h1>
+            </div>
+            <!-- END Pre Page Content -->
+
+            <!-- Page Content -->
+            <div id="page-content">
+             <ul class="breadcrumb" data-spy="affix" data-offset-top="250">
+                    <li>
+                        <a href="index.html"><i class="glyphicon-display"></i></a> <span class="divider"><i class="icon-angle-right"></i></span>
+                    </li>
+                    <li>
+                        <a href="#">Forms</a> <span class="divider"><i class="icon-angle-right"></i></span>
+                    </li>
+                    <li class="active"><a href="">General</a></li>
+                </ul>
+                <!-- END Breadcrumb -->
+
+                <!-- General Forms Block -->
+                <div class="block block-themed block-last">
+                    <!-- General Forms Title -->
+                    <div class="block-title">
+                        <h4>Specializition DETAILS </h4>
+                    </div>
+                    <!-- END General Forms Title -->
+
+                    <!-- General Forms Content -->
+                    <div class="block-content">
+
+
+
+<form name="formID"  method="post" action="/apment/specializationform/" id="formID" >
+  {% csrf_token %}
+  <table width="405" border="0">
+   
+    <tr>
+      <td width="131">Specializition name</td>
+      <td width="94"><input name="sname" type="text" id="sname" class="validate[required] form-control" required></td>
+    </tr>
+    <tr>
+      <td> Specializition description</td>
+      <td><input name="sdes" type="text" id="sdes" class="validate[required] form-control" required ></td>
+    </tr>
+    
+    <tr>
+      <td colspan="2"><input type="submit" name="Submit" class="btn btn-success" value="Submit"></td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+  </table>
+</form>
+      </div>
+                    <!-- END General Forms Content -->
+                </div>
+                <!-- END General Forms Block -->
+            </div>
+            <!-- END Page Content -->
+            {% include "adminhome/val.html" %}
+
+			
+            {% include "adminhome/footer.html" %}
+           
+          </body>
+          </html>

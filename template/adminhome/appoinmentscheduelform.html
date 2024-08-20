@@ -1,0 +1,98 @@
+{% include "adminhome/metatag.html" %}
+{% include "adminhome/header.html" %}
+{% include "adminhome/sidebar.html" %}
+				               <!-- Pre Page Content -->
+                       <div id="pre-page-content">
+                        <h1><i class="glyphicon-nameplate_alt themed-color"></i> Wel Come To <br><small>DR {{ request.session.drid }}</small></h1>
+                    </div>
+            <!-- END Pre Page Content -->
+
+            <!-- Page Content -->
+            <div id="page-content">
+             <ul class="breadcrumb" data-spy="affix" data-offset-top="250">
+                    <li>
+                        <a href="index.html"><i class="glyphicon-display"></i></a> <span class="divider"><i class="icon-angle-right"></i></span>
+                    </li>
+                    <li>
+                        <a href="#">Forms</a> <span class="divider"><i class="icon-angle-right"></i></span>
+                    </li>
+                    <li class="active"><a href="">Appointments</a></li>
+                </ul>
+                <!-- END Breadcrumb -->
+
+                <!-- General Forms Block -->
+                <div class="block block-themed block-last">
+                    <!-- General Forms Title -->
+                    <div class="block-title">
+                        <h4>Appoinment schedule </h4>
+                    </div>
+                    <!-- END General Forms Title -->
+
+                    <!-- General Forms Content -->
+                    <div class="block-content">
+
+
+
+<form name="formID" id="formID" method="post" action="/apment/appoinmentscheduelform/">
+  {% csrf_token %}
+  <table width="405" border="0">
+   
+    <tr>
+      <td width="131">Doctor ID</td>
+      <td width="94"><select name="did" type="text" id="did"  required>
+        <option>select doctor ID</option>>
+          
+          
+          <option value="{{request.session.d_id}}" selected>{{request.session.drid}}</option>
+          
+      </td>
+      
+    </tr>
+  
+    
+      <tr>
+        <td width="131">Appoinment day</td>
+        <td width="94"><input name="appoinday" type="text" id="appoinday" class="validate[required,custom[onlyLetter]]" required></td>
+      </tr>
+      <tr>
+        <td width="131">Appoinment Time</td>
+        <td width="94"><select name="appointime"  id="appointime"  required>
+        <option>10 am</option>
+        <option>11 am</option>
+        <option>12 pm</option>
+        <option>01 pm</option>
+        <option>02 pm</option>
+        <option>04 pm</option>
+        <option>05 pm</option>
+        <option>06 pm</option>
+        <option>07 pm</option>
+        <option>08 pm</option> 
+        <option>09 pm</option> 
+        </select>
+        </td>
+      </tr>
+    <tr>
+      <td> Appoinment status</td>
+      <td><input name="status" type="text" id="status" value="Available" readonly required ></td>
+    </tr>
+   
+    
+    
+    <tr>
+      <td colspan="2"><input type="submit" name="Submit" class="btn btn-success" value="Update Appoinment"></td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+  </table>
+</form>
+      </div>
+                    <!-- END General Forms Content -->
+                </div>
+                <!-- END General Forms Block -->
+            </div>
+            <!-- END Page Content -->
+			
+			
+            {% include "adminhome/footer.html" %}
+           

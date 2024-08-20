@@ -1,0 +1,66 @@
+{% include "adminhome/metatag.html" %}
+{% include "adminhome/header.html" %}
+{% include "adminhome/sidebar.html" %}
+				
+            <!-- Page Content -->
+            <div id="page-content">
+             <ul class="breadcrumb" data-spy="affix" data-offset-top="250">
+                    <li>
+                        <a href="index.html"><i class="glyphicon-display"></i></a> <span class="divider"><i class="icon-angle-right"></i></span>
+                    </li>
+                    <li>
+                        <a href="#">Forms</a> <span class="divider"><i class="icon-angle-right"></i></span>
+                    </li>
+                    <li class="active"><a href="">spectalization Details</a></li>
+              </ul>
+                <!-- END Breadcrumb -->
+
+                        <h4>View Patient Details</h4>
+                  
+         <!-- Table Options -->
+                                  <a href="gtype_form.php" class="btn btn-success"><i class="icon-plus"></i> Add New Paint Type</a>
+
+                <!-- END Table Options -->
+				<table class="table table-bordered table-hover">
+  <thead>
+  <tr>
+    <th width="22">sl no</th>
+    <th width="22">patient ID</th>
+    <th width="22">patient name</th>
+    <th width="73"> contact</th>
+    <th width="66">email</th>
+    <th width="66">address</th>
+    <th width="66">photo</th>
+    <th width="66">pswrd</th>
+	<th width="66">Edit</th>
+	<th width="66">Delete</th>
+    
+  </tr>
+  </thead>
+  <tbody>
+    {% for s in pati%}
+
+  <tr>
+    <td>&nbsp;{{forloop.counter}}</td>
+    <td>&nbsp;{{s.id}}</td>
+    <td>&nbsp;{{s.patient_name}}</td>
+    <td>&nbsp;{{s.patient_contact}}</td>
+    <td>&nbsp;{{s.patient_email}}</td>
+    <td>&nbsp;{{s.patient_address}}</td>
+    <td>&nbsp;{{s.patient_photo}}</td>
+    <td>&nbsp;{{s.pswrd}}</td>
+    
+	<td>&nbsp;<a href="/apment/patientdetailsedit/{{s.id}}">Edit</a></td>
+	<td>&nbsp;<a href="/apment/patientdetailsdelete/{{s.id}}">Delete</a></td>
+    
+  </tr>
+  {%endfor%}
+ 
+  </tbody>
+</table>
+</div>
+                    <!-- END General Forms Content -->
+                </div>
+                <!-- END General Forms Block -->
+            </div>
+            {% include "adminhome/footer.html" %}

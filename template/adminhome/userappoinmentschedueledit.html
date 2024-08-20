@@ -1,0 +1,88 @@
+{% include "adminhome/metatag.html" %}
+{% include "adminhome/header.html" %}
+{% include "adminhome/sidebar.html" %}
+				               <!-- Pre Page Content -->
+            <div id="pre-page-content">
+                <h1><i class="glyphicon-nameplate_alt themed-color"></i> General Forms<br><small>All the elements you need!</small></h1>
+            </div>
+            <!-- END Pre Page Content -->
+
+            <!-- Page Content -->
+            <div id="page-content">
+             <ul class="breadcrumb" data-spy="affix" data-offset-top="250">
+                    <li>
+                        <a href="index.html"><i class="glyphicon-display"></i></a> <span class="divider"><i class="icon-angle-right"></i></span>
+                    </li>
+                    <li>
+                        <a href="#">Forms</a> <span class="divider"><i class="icon-angle-right"></i></span>
+                    </li>
+                    <li class="active"><a href="">General</a></li>
+                </ul>
+                <!-- END Breadcrumb -->
+
+                <!-- General Forms Block -->
+                <div class="block block-themed block-last">
+                    <!-- General Forms Title -->
+                    <div class="block-title">
+                        <h4>Appoinment scheduel </h4>
+                    </div>
+                    <!-- END General Forms Title -->
+
+                    <!-- General Forms Content -->
+                    <div class="block-content">
+
+
+
+<form name="formID" id="formID" method="post" action="/apment/userappoinmentscheduelview/">
+  {% csrf_token %}
+  <table width="405" border="0">
+   
+    <tr>
+      <td width="131">Doctor Name</td>
+      <td width="94"><select name="did" type="text" id="did" class=""value="{{spcl.doctor_id}}">
+        <option>select doctor ID</option>>
+          {% for i in doct%}  
+          <option value="{{i.id}}" {% if i.id == spcl.doctor_id.id %}selected {%endif%}>{{i.dr_name}}</option>
+          <!--<option value="{{i.id}}">{{i.dr_name}}</option>-->
+          {%endfor%}
+      </td>
+      
+    </tr>
+  
+    <tr>
+        <td width="131">Appoinment Day</td>
+        
+        <td width="94"><select name="appoinday" type="text" id="appoinday">
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>     
+        </select></td>
+      </tr>
+      <tr>
+        <td width="131">Booking Date </td>
+        <td width="94"><input type="text" name="cd" value="{{cd}}" readonly></td>
+      </tr>
+    
+    
+    
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+    <tr>
+      <td colspan="2" align="center"><input type="submit" name="Submit" class="btn btn-success" value="Check Appointment Chart"></td>
+    </tr>
+    
+  </table>
+</form>
+      </div>
+                    <!-- END General Forms Content -->
+                </div>
+                <!-- END General Forms Block -->
+            </div>
+            <!-- END Page Content -->
+			
+			
+            {% include "adminhome/footer.html" %}
+           

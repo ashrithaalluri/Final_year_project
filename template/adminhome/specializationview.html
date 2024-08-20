@@ -1,0 +1,54 @@
+{% include "adminhome/metatag.html" %}
+{% include "adminhome/userheader.html" %}
+{% include "adminhome/usersidebar.html" %}
+				
+            <!-- Page Content -->
+            <div id="page-content">
+             <ul class="breadcrumb" data-spy="affix" data-offset-top="250">
+                    <li>
+                        <a href="index.html"><i class="glyphicon-display"></i></a> <span class="divider"><i class="icon-angle-right"></i></span>
+                    </li>
+                    <li>
+                        <a href="#">Forms</a> <span class="divider"><i class="icon-angle-right"></i></span>
+                    </li>
+                    <li class="active"><a href="">spectalization Details</a></li>
+              </ul>
+                <!-- END Breadcrumb -->
+
+                        <h4>View spectalization Details</h4>
+                  
+         <!-- Table Options -->
+                                  
+                <!-- END Table Options -->
+				<table class="table table-bordered table-hover">
+  <thead>
+  <tr>
+    <th width="22">sl no</th>
+    <th width="22">specialization id</th>
+    <th width="73">specialization_name</th>
+    <th width="66">specialization description</th>
+	
+    
+  </tr>
+  </thead>
+  <tbody>
+    {% for s in spcttl%}
+
+  <tr>
+    <td>&nbsp;{{forloop.counter}}</td>
+    <td>&nbsp;{{s.id}}</td>
+    <td>&nbsp;{{s.sp_name}}</td>
+    <td>&nbsp;{{s.sp_discription}}</td>
+	
+    
+  </tr>
+  {%endfor%}
+ 
+  </tbody>
+</table>
+</div>
+                    <!-- END General Forms Content -->
+                </div>
+                <!-- END General Forms Block -->
+            </div>
+            {% include "adminhome/footer.html" %}

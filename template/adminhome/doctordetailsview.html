@@ -1,0 +1,62 @@
+{% include "adminhome/metatag.html" %}
+{% include "adminhome/userheader.html" %}
+{% include "adminhome/usersidebar.html" %}
+				
+            <!-- Page Content -->
+            <div id="page-content">
+             <ul class="breadcrumb" data-spy="affix" data-offset-top="250">
+                    <li>
+                        <a href="index.html"><i class="glyphicon-display"></i></a> <span class="divider"><i class="icon-angle-right"></i></span>
+                    </li>
+                    <li>
+                        <a href="#">Forms</a> <span class="divider"><i class="icon-angle-right"></i></span>
+                    </li>
+                    <li class="active"><a href="">spectalization Details</a></li>
+              </ul>
+                <!-- END Breadcrumb -->
+
+                        <h4>View Specialization Details</h4>
+                  
+         <!-- Table Options -->
+                                 
+                <!-- END Table Options -->
+				<table class="table table-bordered table-hover">
+  <thead>
+  <tr>
+    <th width="22">sl no</th>
+    <th width="22">doctor Id</th>
+    <th width="22">doctor name</th>
+    <th width="73"> contact</th>
+    <th width="66">specialization</th>
+    <th width="66">photo</th>
+    <th width="66">qualification</th>
+    <th width="66">experince</th>
+	
+    
+  </tr>
+  </thead>
+  <tbody>
+    {% for s in doct%}
+
+  <tr>
+    <td>&nbsp;{{forloop.counter}}</td>
+    <td>&nbsp;{{s.id}}</td>
+    <td>&nbsp;{{s.dr_name}}</td>
+    <td>&nbsp;{{s.dr_contact}}</td>
+    <td>&nbsp;{{s.dr_specialization}}</td>
+    <td>&nbsp;<img Src="{{s.dr_photo.url}}" height="400" width="300"> </td>
+    <td>&nbsp;{{s.dr_qualification}}</td>
+    <td>&nbsp;{{s.dr_experince}}</td>
+	
+    
+  </tr>
+  {%endfor%}
+ 
+  </tbody>
+</table>
+</div>
+                    <!-- END General Forms Content -->
+                </div>
+                <!-- END General Forms Block -->
+            </div>
+            {% include "adminhome/footer.html" %}

@@ -1,0 +1,68 @@
+{% include "adminhome/metatag.html" %}
+{% include "adminhome/userheader.html" %}
+{% include "adminhome/usersidebar.html" %}
+				
+            <!-- Page Content -->
+            <div id="page-content">
+             <ul class="breadcrumb" data-spy="affix" data-offset-top="250">
+                    <li>
+                        <a href="index.html"><i class="glyphicon-display"></i></a> <span class="divider"><i class="icon-angle-right"></i></span>
+                    </li>
+                    <li>
+                        <a href="#">Forms</a> <span class="divider"><i class="icon-angle-right"></i></span>
+                    </li>
+                    <li class="active"><a href="">spectalization Details</a></li>
+              </ul>
+                <!-- END Breadcrumb -->
+
+                        <h4>View Appoinmentscheduel Details</h4>
+                  
+         <!-- Table Options -->
+                                  
+                                  
+
+
+                <!-- END Table Options -->
+				<table class="table table-bordered table-hover">
+  <thead>
+  <tr>
+    <th width="22">sl no</th>
+    <th width="22">doctor id</th>
+    <th width="66">appoinment day</th>
+    <th width="73">appoinment Time</th>
+    <th width="66">appoinment status</th>
+    
+	<th width="66">Status</th>
+
+    
+  </tr>
+  </thead>
+  <tbody>
+    {% for s in appoi%}
+
+  <tr>
+    <td>&nbsp;<input type="text" disabled border="0 "  value="{{forloop.counter}}"  </td>
+    <td>&nbsp;{{s.doctor_id}}</td>
+    <td>&nbsp;{{s.appoinment_day}}</td>
+    <td>&nbsp;{{s.hours_minutes}}</td>
+    <td>&nbsp;{{s.appoinment_status}}</td>
+    {% if s.appoinment_status == 'Booked'%}
+    <td class="btn btn-danger"><button type="button" class="btn btn-danger">BOOKED..! </button></td>
+    {%endif%}
+    
+    {% if s.appoinment_status == 'Available'%}
+    <td class="btn btn-success"><a href="/apment/bookappoinment\{{s.id}}?dr_id={{s.doctor_id.id}}&&pid={{request.session.u_id}}&&ad={{s.appoinment_day}}&&hrms={{s.hours_minutes}}&&st={{s.appoinment_status}}"><button type="button" class="btn btn-success"> <font color="white">AVAILABLE</font></a></button></td>
+  {%endif%}
+	
+    
+  </tr>
+  {%endfor%}
+ 
+  </tbody>
+</table>
+</div>
+                    <!-- END General Forms Content -->
+                </div>
+                <!-- END General Forms Block -->
+            </div>
+            {% include "adminhome/footer.html" %}

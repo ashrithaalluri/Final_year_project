@@ -1,0 +1,94 @@
+{% include "adminhome/metatag.html" %}
+{% include "adminhome/header.html" %}
+{% include "adminhome/sidebar.html" %}
+				               <!-- Pre Page Content -->
+            <div id="pre-page-content">
+                <h1><i class="glyphicon-nameplate_alt themed-color"></i> General Forms<br><small>All the elements you need!</small></h1>
+            </div>
+            <!-- END Pre Page Content -->
+
+            <!-- Page Content -->
+            <div id="page-content">
+             <ul class="breadcrumb" data-spy="affix" data-offset-top="250">
+                    <li>
+                        <a href="index.html"><i class="glyphicon-display"></i></a> <span class="divider"><i class="icon-angle-right"></i></span>
+                    </li>
+                    <li>
+                        <a href="#">Forms</a> <span class="divider"><i class="icon-angle-right"></i></span>
+                    </li>
+                    <li class="active"><a href="">General</a></li>
+                </ul>
+                <!-- END Breadcrumb -->
+
+                <!-- General Forms Block -->
+                <div class="block block-themed block-last">
+                    <!-- General Forms Title -->
+                    <div class="block-title">
+                        <h4>Appoinment scheduel </h4>
+                    </div>
+                    <!-- END General Forms Title -->
+
+                    <!-- General Forms Content -->
+                    <div class="block-content">
+
+
+
+<form name="formID" id="formID" method="post" action="/apment/appoinmentscheduelupdate/{{spcl.id}}">
+  {% csrf_token %}
+  <table width="405" border="0">
+   
+    <tr>
+      <td width="131">Doctor ID</td>
+      <td width="94"><select name="did" type="text" id="did" class="validate[required,custom[onlyLetter]]"value="{{spcl.doctor_id}}">
+        <option>select doctor ID</option>>
+          {% for i in doct%}  
+          <option value="{{i.id}}" {% if i.id == spcl.doctor_id.id %}selected {%endif%}>{{i.dr_name}}</option>
+          <!--<option value="{{i.id}}">{{i.dr_name}}</option>-->
+          {%endfor%}
+      </td>
+      
+    </tr>
+  
+    <tr>
+        <td width="131">Appoinment date</td>
+        <td width="94"><input name="appoin" type="date" id="appoin" class="validate[required,custom[onlyLetter]]"value="{{spcl.appoinment_date}}"></td>
+      </tr>
+      <tr>
+        <td width="131">Appoinment day</td>
+        <td width="94"><input name="appoinday" type="text" id="appoinday" class="validate[required,custom[onlyLetter]]" value="{{spcl.appoinment_day}}"></td>
+      </tr>
+    <tr>
+      <td> Appoinment status</td>
+      <td><input name="status" type="text" id="status"class="validate[required,custom[onlyNumber]]" value="{{spcl.appoinment_status}}"></td>
+    </tr>
+    
+    <tr>
+      <td>Patient ID</td>
+      <td><select name="pid" type="text" id="pid"class="validate[required,custom[onlyNumber]]" value="{{spcl.patient_id}}">
+        <option>select  IDS</option>>
+        {% for i in pati%}
+        <option value="{{i.id}}" {% if i.id == spcl.patient_id %}selected {%endif%}>{{i.patient_name}}</option>
+        <option value="{{i.id}}">{{i.patient_name}}</option>
+        {%endfor%}
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td colspan="2"><input type="submit" name="Submit" class="btn btn-success" value="Update"></td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+  </table>
+</form>
+      </div>
+                    <!-- END General Forms Content -->
+                </div>
+                <!-- END General Forms Block -->
+            </div>
+            <!-- END Page Content -->
+			
+			
+            {% include "adminhome/footer.html" %}
+           

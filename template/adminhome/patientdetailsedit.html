@@ -1,0 +1,83 @@
+{% include "adminhome/metatag.html" %}
+{% include "adminhome/userheader.html" %}
+{% include "adminhome/usersidebar.html" %}
+				               <!-- Pre Page Content -->
+            <div id="pre-page-content">
+                <h1><i class="glyphicon-nameplate_alt themed-color"></i> General Forms<br><small>All the elements you need!</small></h1>
+            </div>
+            <!-- END Pre Page Content -->
+
+            <!-- Page Content -->
+            <div id="page-content">
+             <ul class="breadcrumb" data-spy="affix" data-offset-top="250">
+                    <li>
+                        <a href="index.html"><i class="glyphicon-display"></i></a> <span class="divider"><i class="icon-angle-right"></i></span>
+                    </li>
+                    <li>
+                        <a href="#">Forms</a> <span class="divider"><i class="icon-angle-right"></i></span>
+                    </li>
+                    <li class="active"><a href="">General</a></li>
+                </ul>
+                <!-- END Breadcrumb -->
+
+                <!-- General Forms Block -->
+                <div class="block block-themed block-last">
+                    <!-- General Forms Title -->
+                    <div class="block-title">
+                        <h4>Patient DETAILS </h4>
+                    </div>
+                    <!-- END General Forms Title -->
+
+                    <!-- General Forms Content -->
+                    <div class="block-content">
+
+
+
+<form name="formID" id="formID" method="post" action="/apment/patientdetailsupdate/{{pati.id}}">
+  {% csrf_token %}
+    <table width="405" border="0">
+   
+    <tr>
+      <td width="131">Patient name</td>
+      <td width="94"><input name="pname" type="text" id="pname" class="validate[required,custom[onlyLetter]]"value="{{pati.patient_name}}"></td>
+    </tr>
+    <tr>
+        <td width="131">Contact</td>
+        <td width="94"><input name="cont" type="text" id="cont" class="validate[required,custom[onlyLetter]]"value="{{pati.patient_contact}}"></td>
+      </tr>
+      <tr>
+        <td width="131">Emailid</td>
+        <td width="94"><input name="emai" type="email" id="emai" class="validate[required,custom[onlyLetter]]"value="{{pati.patient_email}}"></td>
+      </tr>
+    <tr>
+      <td> Address</td>
+      <td><input name="addr" type="text" id="addr"class="validate[required]" value="{{pati.patient_address}}"></td>
+    </tr>
+   
+    <tr>
+      <td>Patient photo</td>
+      <td><input name="photo" type="file" id="photo"class="validate[required]" value="{{pati.patient_photo}}"><img src="{{pati.patient_photo.url}}" height="400" width="200"></td>
+    </tr>
+    <tr>
+      <td> password</td>
+      <td><input name="passw" type="password" id="passw"class="validate[required]" value="{{pati.pswrd}}"></td>
+    </tr>
+   
+    <tr>
+      <td colspan="2"><input type="submit" name="Submit" class="btn btn-success" value="Update"></td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+  </table>
+</form>
+      </div>
+                    <!-- END General Forms Content -->
+                </div>
+                <!-- END General Forms Block -->
+            </div>
+            <!-- END Page Content -->
+			
+			
+            {% include "adminhome/footer.html" %}
+           

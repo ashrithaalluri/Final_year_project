@@ -1,0 +1,63 @@
+{% include "adminhome/metatag.html" %}
+{% include "adminhome/header.html" %}
+{% include "adminhome/sidebar.html" %}
+				
+            <!-- Page Content -->
+            <div id="page-content">
+             <ul class="breadcrumb" data-spy="affix" data-offset-top="250">
+                    <li>
+                        <a href="index.html"><i class="glyphicon-display"></i></a> <span class="divider"><i class="icon-angle-right"></i></span>
+                    </li>
+                    <li>
+                        <a href="#">Forms</a> <span class="divider"><i class="icon-angle-right"></i></span>
+                    </li>
+                    <li class="active"><a href="">spectalization Details</a></li>
+              </ul>
+                <!-- END Breadcrumb -->
+
+                        <h4>View Appoinmentscheduel Details</h4>
+                  
+         <!-- Table Options -->
+                                  
+                                  <a href="/apment/appoinmentscheduelform/" class="btn btn-success"><i class="icon-plus"></i> Add</a>
+
+
+                <!-- END Table Options -->
+				<table class="table table-bordered table-hover">
+  <thead>
+  <tr>
+    <th width="22">sl no</th>
+    <th width="22">doctor id</th>
+    <th width="66">appoinment day</th>
+    <th width="73">appoinment Time</th>
+    <th width="66">appoinment status</th>
+    
+	<th width="66">Edit</th>
+	<th width="66">Delete</th>
+    
+  </tr>
+  </thead>
+  <tbody>
+    {% for s in appoi%}
+
+  <tr>
+    <td>&nbsp;{{forloop.counter}}</td>
+    <td>&nbsp;{{s.doctor_id}}</td>
+    <td>&nbsp;{{s.appoinment_day}}</td>
+    <td>&nbsp;{{s.hours_minutes}}</td>
+    <td>&nbsp;{{s.appoinment_status}}</td>
+    
+	<td>&nbsp;<a href="/apment/appoinmentschedueledit/{{s.id}}">Edit</a></td>
+	<td>&nbsp;<a href="/apment/appoinmentschedueldelete/{{s.id}}">Delete</a></td>
+    
+  </tr>
+  {%endfor%}
+ 
+  </tbody>
+</table>
+</div>
+                    <!-- END General Forms Content -->
+                </div>
+                <!-- END General Forms Block -->
+            </div>
+            {% include "adminhome/footer.html" %}

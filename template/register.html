@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - A Pen by Mohithpoojary</title>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css'><link rel="stylesheet" 
+href="/static/style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+	<div class="screen">
+		<div class="screen__content">
+			<form class="login" method="post" action="/register/" enctype="multipart/form-data">
+				{%csrf_token%}
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input type="text" name="pname" class="login__input" placeholder="Patient Name" required>
+				</div>
+				<div class="login__field">
+					<i class="login__icon fa fa-phone-square"></i>
+					<input type="text" name="cont" class="login__input" placeholder="Contact" required>
+				</div>
+        <div class="login__field">
+					<i class="login__icon  fa fa-envelope"></i>
+					<input type="email" name="emai" class="login__input" placeholder="Email" required>
+				</div>
+        <div class="login__field">
+					<i class="login__icon  fa fa-address-card"></i>
+					<input type="text" name="addr" class="login__input" placeholder="address" required>
+				</div>
+        <div class="login__field">
+					<i class="login__icon  fa fa-user"></i>
+					<input type="file" name="photo" class="login__input" placeholder="Photo" required>
+				</div>
+        <div class="login__field">
+					<i class="login__icon  fa fa-key"></i>
+					<input type="password" name="passw" class="login__input" placeholder="Password" required>
+				</div>
+				<button class="button login__submit">
+					
+					<span class="button__text">Sign Up</span>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>				
+			</form>
+			<div class="social-login">
+				<h3>If already registered...</h3>
+				<div class="social-icons">
+					<a href="/login/" >Click here...</a>
+				
+				</div>
+			</div>
+		</div>
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>		
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>		
+	</div>
+</div>
+<!-- partial -->
+  
+</body>
+</html>

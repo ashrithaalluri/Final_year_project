@@ -1,0 +1,63 @@
+{% include "adminhome/metatag.html" %}
+{% include "adminhome/userheader.html" %}
+{% include "adminhome/usersidebar.html" %}
+				
+            <!-- Page Content -->
+            <div id="page-content">
+             <ul class="breadcrumb" data-spy="affix" data-offset-top="250">
+                    <li>
+                        <a href="index.html"><i class="glyphicon-display"></i></a> <span class="divider"><i class="icon-angle-right"></i></span>
+                    </li>
+                    <li>
+                        <a href="#">Forms</a> <span class="divider"><i class="icon-angle-right"></i></span>
+                    </li>
+                    <li class="active"><a href=""></a></li>
+              </ul>
+                <!-- END Breadcrumb -->
+
+                        <h4>View Appoinments Status Details</h4>
+                  
+         <!-- Table Options -->
+                                  
+                                  
+
+
+                <!-- END Table Options -->
+				<table class="table table-bordered table-hover">
+  <thead>
+  <tr>
+    <th width="22">sl no</th>
+    <th width="22">doctor id</th>
+    <th width="66">appoinment day</th>
+    <th width="73">appoinment Time</th>
+    <th width="66">appoinment status</th>
+    
+	
+    
+  </tr>
+  </thead>
+  <tbody>
+    {% for s in appoi%}
+
+  <tr>
+    <td>&nbsp;{{forloop.counter}}</td>
+    <td>&nbsp;{{s.doctor_id}}</td>
+    <td>&nbsp;{{s.appoinment_day}}</td>
+    <td>&nbsp;{{s.hours_minutes}}</td>
+    {% if s.appoinment_status == 'Booked'%}
+    <td class="btn btn-success">&nbsp;Your Appointment Is Booked Successfully!
+      {%endif%}</td>
+    
+	
+    
+  </tr>
+  {%endfor%}
+ 
+  </tbody>
+</table>
+</div>
+                    <!-- END General Forms Content -->
+                </div>
+                <!-- END General Forms Block -->
+            </div>
+            {% include "adminhome/footer.html" %}

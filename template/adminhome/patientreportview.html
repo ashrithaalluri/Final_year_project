@@ -1,0 +1,63 @@
+{% include "adminhome/metatag.html" %}
+{% include "adminhome/header.html" %}
+{% include "adminhome/sidebar.html" %}
+				
+            <!-- Page Content -->
+            <div id="page-content">
+             <ul class="breadcrumb" data-spy="affix" data-offset-top="250">
+                    <li>
+                        <a href="#"><i class="glyphicon-display"></i></a> <span class="divider"><i class="icon-angle-right"></i></span>
+                    </li>
+                    <li>
+                        <a href="#">Forms</a> <span class="divider"><i class="icon-angle-right"></i></span>
+                    </li>
+                    <li class="active"><a href=""></a></li>
+              </ul>
+                <!-- END Breadcrumb -->
+
+                        <h4>View Patient Report Details</h4>
+                  
+         <!-- Table Options -->
+                                  <a href="/apment/patientreportform/" class="btn btn-success"><i class="icon-plus"></i> Add Patient Reports</a>
+
+                <!-- END Table Options -->
+				<table class="table table-bordered table-hover">
+  <thead>
+  <tr>
+    <th width="22">sl no</th>
+    <th width="22">patient id</th>
+    <th width="22">patient name</th>
+    <th width="73">Report name</th>
+    <th width="66">Report file</th>
+    <th width="66">Report date</th>
+    <th width="66">Reffer by</th>
+	<th width="66">Edit</th>
+	<th width="66">Delete</th>
+    
+  </tr>
+  </thead>
+  <tbody>
+    {% for s in report%}
+
+  <tr>
+    <td>&nbsp;{{forloop.counter}}</td>
+   <td>&nbsp; {{s.id}}</td>
+    <td>&nbsp;{{s.patient_id}}</td>
+    <td>&nbsp;{{s.patient_report_name}}</td>
+    <td>&nbsp;{{s.report_file}}</td>
+    <td>&nbsp;{{s.report_date}}</td>
+    <td>&nbsp;{{s.refferd_by}}</td>
+	<td>&nbsp;<a href="/apment/patientreportedit/{{s.id}}">Edit</a></td>
+	<td>&nbsp;<a href="/apment/patientreportdelete/{{s.id}}">Delete</a></td>
+    
+  </tr>
+  {%endfor%}
+ 
+  </tbody>
+</table>
+</div>
+                    <!-- END General Forms Content -->
+                </div>
+                <!-- END General Forms Block -->
+            </div>
+            {% include "adminhome/footer.html" %}

@@ -1,0 +1,99 @@
+{% include "adminhome/metatag.html" %}
+{% include "adminhome/header.html" %}
+{% include "adminhome/sidebar.html" %}
+				               <!-- Pre Page Content -->
+                       <div id="pre-page-content">
+                        <h1><i class="glyphicon-nameplate_alt themed-color"></i> Wel Come To <br><small>DR {{ request.session.drid }}</small></h1>
+                    </div>
+            <!-- END Pre Page Content -->
+
+            <!-- Page Content -->
+            <div id="page-content">
+             <ul class="breadcrumb" data-spy="affix" data-offset-top="250">
+                    <li>
+                        <a href="index.html"><i class="glyphicon-display"></i></a> <span class="divider"><i class="icon-angle-right"></i></span>
+                    </li>
+                    <li>
+                        <a href="#">Forms</a> <span class="divider"><i class="icon-angle-right"></i></span>
+                    </li>
+                    <li class="active"><a href="">Profile</a></li>
+                </ul>
+                <!-- END Breadcrumb -->
+
+                <!-- General Forms Block -->
+                <div class="block block-themed block-last">
+                    <!-- General Forms Title -->
+                    <div class="block-title">
+                        <h4>Doctor DETAILS </h4>
+                    </div>
+                    <!-- END General Forms Title -->
+
+                    <!-- General Forms Content -->
+                    <div class="block-content">
+
+
+
+<form name="formID" id="formID" method="post" action="/apment/doctordetailsupdate/{{doc.id}}">
+  {% csrf_token %}
+  <table width="405" border="0">
+   
+    <tr>
+      <td width="131">Doctor name</td>
+      <td width="94"><input name="dname" type="text" id="dname" class="validate[required,custom[onlyLetter]]" value="{{doc.dr_name}}"></td>
+      
+      
+    </tr>
+    <tr>
+        <td width="131">Contact</td>
+        <td width="94"><input name="cont" type="text" id="cont" class="validate[required,custom[onlyLetter]]"value="{{doc.dr_contact}}"></td>
+      </tr>
+      <tr>
+        <td width="131">Emailid</td>
+        <td width="94"><input name="emai" type="email" id="emai" class="validate[required,custom[onlyLetter]]"value="{{doc.dr_emailid}}"></td>
+      </tr>
+    <tr>
+      <td> Address</td>
+      <td><input name="addr" type="text" id="addr"class="validate[required,custom[onlyNumber]]" value="{{doc.dr_address}}"></td>
+    </tr>
+    <tr>
+      <td>Doctor specilization </td>
+      <td><select name="drspec" type="text" id="drspes"class="validate[required,custom[onlyNumber]]" value="{{doc.dr_specialization}}">
+        <option>select specilization details</option>>
+        {% for i in spcl%}  
+        <option value="{{i.id}}">{{i.sp_name}}</option>
+        {%endfor%}
+      </td>
+
+
+    </tr>
+    <tr>
+      <td>doctor photo</td>
+      <td><input name="photo" type="file" id="photo"class="validate[required,custom[onlyNumber]]" value="{{doc.dr_photo}}"> <img src="{{doc.dr_photo.url}}" height="200" width="200"> </td>
+      
+    </tr>
+    <tr>
+      <td> Doctor Qualification</td>
+      <td><input name="doctqual" type="text" id="doctqual"class="validate[required,custom[onlyNumber]]" value="{{doc.dr_qualification}}"></td>
+    </tr>
+    <tr>
+      <td>Doctor experince</td>
+      <td><input name="exp" type="text" id="exp"class="validate[required,custom[onlyNumber]]"value="{{doc.dr_experince}}" ></td>
+    </tr>
+    <tr>
+      <td colspan="2"><input type="submit" name="Submit" class="btn btn-success" value="Update"></td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+  </table>
+</form>
+      </div>
+                    <!-- END General Forms Content -->
+                </div>
+                <!-- END General Forms Block -->
+            </div>
+            <!-- END Page Content -->
+			
+			
+            {% include "adminhome/footer.html" %}
+           
